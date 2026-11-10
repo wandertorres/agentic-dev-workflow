@@ -1,0 +1,77 @@
+{
+  "$schema": "https://json.schemastore.org/claude-code-settings.json",
+  "attribution": {
+    "commit": "",
+    "pr": "",
+    "sessionUrl": false
+  },
+  "env": {
+    "CLAUDE_CODE_FORK_SUBAGENT": "0"
+  },
+  "permissions": {
+    "allow": [
+      "Edit(/**)",
+      "Bash(git status*)",
+      "Bash(git diff *)",
+      "Bash(git log *)",
+      "Bash(git show *)",
+      "Bash(git rev-parse *)",
+      "Bash(git merge-base *)",
+      "Bash(git branch --show-current)",
+      "Bash(git fetch *)",
+      "Bash(git switch *)",
+      "Bash(git add *)",
+      "Bash(git rm *)",
+      "Bash(git commit *)",
+      "Bash(gh pr view *)",
+      "Bash(gh pr list *)",
+      "Bash(gh pr edit *)",
+      "Bash(gh api user *)",
+      "Bash(.claude/scripts/review-context.sh *)",
+      "Bash(.claude/scripts/state.sh *)",
+      "Bash(.claude/skills/sync-docs/scripts/docs-impact.sh *)",
+      "Bash(.claude/skills/manage-pr/scripts/pr-push.sh *)",
+      "Bash(.claude/skills/manage-pr/scripts/pr-open.sh *)",
+      "Bash(.claude/skills/manage-pr/scripts/pr-check-approval.sh *)",
+      "Bash(.claude/skills/manage-pr/scripts/pr-remove-spec.sh *)",
+      "Skill(sync-docs)",
+      "Skill(manage-pr)",
+      "Skill(record-decision)"
+    ],
+    "ask": [
+      "Bash(gh pr merge *)",
+      "Bash(gh pr close *)",
+      "Bash(.claude/skills/manage-pr/scripts/pr-merge.sh *)",
+      "Bash(.claude/skills/manage-pr/scripts/pr-close.sh *)"
+    ],
+    "deny": [
+      "Bash(git push *)",
+      "Bash(git add -A*)",
+      "Bash(git add --all*)",
+      "Bash(git add .)",
+      "Bash(git add ./)",
+      "Read(~/.ssh/**)",
+      "Read(~/.aws/**)",
+      "Read(**/.env)",
+      "Read(**/.env.*)"
+    ]
+  },
+  "sandbox": {
+    "enabled": true,
+    "failIfUnavailable": true,
+    "excludedCommands": [
+      "gh *",
+      "git commit *",
+      ".claude/skills/manage-pr/scripts/pr-push.sh *",
+      ".claude/skills/manage-pr/scripts/pr-open.sh *",
+      ".claude/skills/manage-pr/scripts/pr-check-approval.sh *",
+      ".claude/skills/manage-pr/scripts/pr-remove-spec.sh *",
+      ".claude/skills/manage-pr/scripts/pr-merge.sh *",
+      ".claude/skills/manage-pr/scripts/pr-close.sh *"
+    ],
+    "filesystem": {
+      "denyRead": ["~/.ssh", "~/.aws", "./**/.env", "./**/.env.*"],
+      "allowRead": ["./**/.env.example"]
+    }
+  }
+}

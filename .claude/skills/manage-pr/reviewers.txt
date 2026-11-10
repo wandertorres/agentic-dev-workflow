@@ -1,0 +1,4 @@
+# Logins do GitHub que podem revisar os PRs, um por linha.
+# O pr-open.sh pede revisão ao primeiro que não for você.
+# Linhas vazias e começadas por # são ignoradas. Ajuste para o seu time.
+# octocat

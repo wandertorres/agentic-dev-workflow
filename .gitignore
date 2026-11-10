@@ -1,0 +1,25 @@
+# Segredos: nunca versionar
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+
+# Dependências e builds
+node_modules/
+__pycache__/
+.venv/
+venv/
+dist/
+build/
+
+# Sistema e editores
+.DS_Store
+.idea/
+.vscode/
+*.log
+
+# Estado local do fluxo de orquestração
+.work/
+.claude/worktrees/
+.claude/settings.local.json
